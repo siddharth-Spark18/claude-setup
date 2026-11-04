@@ -15,6 +15,8 @@ If no plan file exists and the request itself doesn't contain enough detail to i
 
 If the request is detailed enough to implement without a formal plan doc, proceed — a plan file isn't mandatory, just preferred.
 
+If the plan has a **Files to Touch** list, that is your scope. You may still change a file that isn't on the list when the work genuinely needs it (a missed import site, a type file, a barrel export). Do that and keep going; don't stop. List every such file in your report under "Outside the plan's file list", with one line on why. Never use this for opportunistic refactors, extra features or new dependencies the plan didn't ask for.
+
 ## Step 2: Learn the codebase's conventions
 
 Before writing anything:
@@ -36,6 +38,7 @@ List every file created or modified, a brief summary of what was implemented, an
 
 - Any decision you made where the plan/request was ambiguous (Step 3)
 - Anything you deliberately left out of scope
+- Outside the plan's file list: every file you touched that isn't in the plan's Files to Touch list, with why (write "none" if none)
 - A short note that no tests were written and nothing was committed — these are left for the user
 
 ## Rules
