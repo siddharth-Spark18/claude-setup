@@ -19,6 +19,10 @@ Run `git status` and `git diff` (uncommitted changes) to get the full list of cr
 
 Look for `docs/plans/<feature-slug>.md` matching this work. If found, use it as the standard to review against: does the implementation cover the stated scope? Handle the stated edge cases? Respect the stated out-of-scope boundaries (i.e., did it scope-creep into something explicitly marked out)?
 
+If the plan has a **Files to Touch** list, compare it with the changed files from `git status`:
+- **Changed but not listed:** for each, judge whether it was necessary (an import site, a type file) or scope creep. Only scope creep that changes behaviour is must-fix. Necessary extras just get noted.
+- **Listed but not changed:** check whether that part of the plan was dropped.
+
 If no plan exists, review for general correctness and quality only, and note in your report that there was no plan to check against.
 
 ## Step 3: Review
@@ -48,7 +52,7 @@ Save to `<reviewsDir>/<feature-slug>-<ISO date>.md`:
 - **Verdict:** Approve / Approve with must-fix items / Needs changes
 - **Must-fix** — for each: file, line/area, what's wrong, why it matters (correctness/security/plan violation)
 - **Optional** — for each: file, area, the suggestion, explicitly marked non-blocking
-- **Plan coverage** — if a plan existed: what was covered, what wasn't, any scope creep noted
+- **Plan coverage** — if a plan existed: what was covered, what wasn't, any scope creep noted, and the Files to Touch comparison (changed-but-not-listed, listed-but-not-changed)
 
 In chat, give the verdict and must-fix count, and point to the report — don't paste the whole thing inline.
 
